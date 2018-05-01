@@ -5,6 +5,7 @@
 ```bash
 
     cd vue_admin_template
+    git checkout origin/single_sidebar
     npm i
     npm start
 
@@ -15,8 +16,6 @@
 `single_sidebar` 一级侧边栏 适用简单业务场景  
 `sidebar_topbar` 二级侧边栏+顶部导航栏 适用较复杂业务场景   
 
-## TODO
-single_sidebar 主内容区填充 mockjs
 
 ## 目录结构
 ```
@@ -35,8 +34,8 @@ single_sidebar 主内容区填充 mockjs
 |   |    |__ mockApi.js             mock接口
 |   |    |__ mockData.js            mock数据
 |   |__ pages                    页面目录
-|   |__ router                   路由
-|   |__ vuex                     vuex
+|   |__ router                   路由目录
+|   |__ vuex                     vuex目录
 |   |__ App.vue                  根组件
 |   |__ Layout.vue               主布局文件   
 |   |__ Login.vue                登录页             
