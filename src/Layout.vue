@@ -163,13 +163,16 @@ export default {
 }
 .el-main {
 	margin: 5px;
-	position: relative;
-    background: #ffffff;
+    position: relative;
+    padding: 5px;
 }
 .sub-nav-item {
 	text-indent: 50px;
 }
-.el-submenu__title i {
+.el-menu-item i{
 	color: #ffffff;
+}
+.el-menu-item.is-active i {
+    color: rgb(255, 208, 75);
 }
 </style>

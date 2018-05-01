@@ -1,5 +1,5 @@
 <template>
     <div class="setting">
-        <h3>setting</h3>
+        <h3>system setting</h3>
     </div>
 </template>

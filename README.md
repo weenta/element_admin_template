@@ -1,10 +1,10 @@
-# element_admin_template
-基于`element-ui@2.3 + mockjs`的一款通用后台管理模板  
+# vue_admin_template
+基于`element-ui@2.3 + mockjs + axios`的一款通用后台管理模板  
 
 ## start
 ```bash
 
-    cd ele_admin_template
+    cd vue_admin_template
     npm i
     npm start
 
@@ -18,23 +18,26 @@
 ## TODO
 single_sidebar 主内容区填充 mockjs
 
-
-### 目录结构
+## 目录结构
 ```
 - element_adimn
 |__build
 |__config   
 |__src                           主资源目录
 |   |__api                       API目录
-|   |    |__ config.js           API配置文件
-|   |    |__ index.js            API文件
+|   |    |__ config.js              API配置文件
+|   |    |__ index.js               API文件
+|   |__ assets                   资源目录
+|   |    |__ css                   
+|   |    |__ images                   
 |   |__components                组件目录
 |   |__mock                      数据模拟目录
-|   |    |__ mockData.js         模拟数据
-|   |    |__ mockApi.js          模拟接口
+|   |    |__ mockApi.js             mock接口
+|   |    |__ mockData.js            mock数据
 |   |__ pages                    页面目录
 |   |__ router                   路由
-|   |__ App.vue  
+|   |__ vuex                     vuex
+|   |__ App.vue                  根组件
 |   |__ Layout.vue               主布局文件   
 |   |__ Login.vue                登录页             
 |   |__ main.js
