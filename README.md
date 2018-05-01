@@ -5,7 +5,7 @@
 ```bash
 
     cd vue_admin_template
-    git checkout origin/single_sidebar
+    git checkout -b single_sidebar origin/single_sidebar
     npm i
     npm start
 
