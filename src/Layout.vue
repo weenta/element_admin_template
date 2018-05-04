@@ -28,13 +28,17 @@
                         text-color="#fff"
                         active-text-color="#ffd04b"
                         :router='activeRouter'
+                        :unique-opened='true'
                         >
-                        <el-menu-item v-for='(nav,index) in sidebarNav' :key="index" :index='nav.path'>
+                        <!-- 一级导航 -->
+                        <el-submenu  v-for='(nav,index) in sidebarNav' :key="index" :index="nav.name">
                             <template slot="title">
                                 <i :class="nav.iconCls"></i>
                                 <span slot="title">{{nav.name}}</span>
                             </template>
-                        </el-menu-item>
+                            <!-- 二级导航 -->
+                            <el-menu-item v-for='child in nav.children' :key="child.name" :index='child.path'>{{child.name}}</el-menu-item>
+                        </el-submenu>
                     </el-menu>
                 </el-aside>
                 <!-- 主内容区 -->
@@ -61,7 +65,7 @@ export default {
     computed:{
         // 侧边栏导航
 		sidebarNav(){
-			let pages = this.$router.options.routes[0].children
+			let pages = this.$router.options.routes.filter(route => !route.hide)
 			return pages
         },
 
@@ -100,7 +104,6 @@ export default {
 </script>
 
 <style scoped>
-
 .logo {
 	width: 60px;
 	height: 60px;
@@ -139,40 +142,5 @@ export default {
 	right: 0;
 	overflow: hidden;
     background-color: #f1f1f1;
-}
-
-.el-header {
-    height: 70px!important;
-	background: #545c64;
-	color: #fff;
-	padding-left: 30px;
-	padding-right: 30px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	border-bottom: 1px solid #666666;
-	box-sizing: border-box;
-}
-
-.el-aside {
-    width: 200px!important;
-    background-color: #545c64;
-}
-.el-menu {
-    width: 200px;
-}
-.el-main {
-	margin: 5px;
-    position: relative;
-    padding: 5px;
-}
-.sub-nav-item {
-	text-indent: 50px;
-}
-.el-menu-item i{
-	color: #ffffff;
-}
-.el-menu-item.is-active i {
-    color: rgb(255, 208, 75);
 }
 </style>

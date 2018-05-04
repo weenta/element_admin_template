@@ -3,10 +3,10 @@
     <el-form :model="form" :rules="rule" ref="form" label-position="left" label-width="0px" class="login-form" v-loading='loading'>
         <h3 class="title">登录</h3>
         <el-form-item prop="account" class="login-form-item">
-            <el-input id='input-login' class="input-large" type="text" v-model="form.account" auto-complete="off" placeholder="账号"></el-input>
+            <el-input id='input-login' class="input-large" type="text" v-model="form.account" auto-complete="off" placeholder="账号"  @keyup.native.enter="handleSubmit('form')"></el-input>
         </el-form-item>
         <el-form-item prop="password" class="login-form-item">
-            <el-input type="password"  class="input-large"  v-model="form.password" auto-complete="off" placeholder="密码"></el-input>
+            <el-input type="password"  class="input-large"  v-model="form.password" auto-complete="off" placeholder="密码"  @keyup.native.enter="handleSubmit('form')"></el-input>
         </el-form-item>
         <el-checkbox v-model="checked" checked style="margin:0px 0px 35px 0px;">记住密码</el-checkbox>
         <el-form-item style="width:100%;">
@@ -57,7 +57,7 @@ export default {
             this.loading = true
             setTimeout(() => {
                 this.loading = false
-                this.$router.push({path: '/goods'});  
+                this.$router.replace({path: '/goodson'});  
                 this.$notify({
                     title: '成功',
                     message: '登录成功',

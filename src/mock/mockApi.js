@@ -27,9 +27,14 @@ mock.onGet('/order_list').reply(()=>{
     return send(data.orderList)
 });
 
-// 商品列表
-mock.onGet('/goods_list').reply(()=>{
-    return send(data.goodsList)
+// 上架商品列表
+mock.onGet('/goods_list_on').reply(()=>{
+    return send(data.goodsListOn)
+});
+
+// 下架商品列表
+mock.onGet('/goods_list_off').reply(()=>{
+    return send(data.goodsListOff)
 });
 
 // 分类列表
